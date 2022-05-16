@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 export const Container = styled.div`
 margin-top:10px;
 height: calc(100vh - 90px);
-width:100vw;
+width:99vw;
 overflow:hidden;
 display:flex;
 flex-direction:row;
@@ -12,11 +12,12 @@ font-family: 'Lato', sans-serif;
 position: relative;
 
 
+
 `
 //wrapper
 export const Wrapper = styled.div`
 display: flex;
-width:100vw;
+width:98vw;
 flex:1;
 transform:translateX(-${props => props.slide * 100}vw);
 transition: all 1.2s ease;
