@@ -1,12 +1,9 @@
-import Bar from '../../components/bar/Bar'
+
 import {Container, Wrapper,Image, Info, Title, Desc, Price,DIV, Filter, Color,Text, Option, Select, Input, Btn} from './style'
-import Footer from '../../components/footer/Footer'
 import {Remove, Add} from '@mui/icons-material';
 export default function Single() {
   return (
       <>
-
-        <Bar/>
         <Container>
             <Wrapper>
                 <Image src='/assets/images/33.jpg'/>
@@ -25,16 +22,16 @@ export default function Single() {
                             
                         </Filter>
                         <Filter>
-                        <Text>Size </Text>
-                        <Select>
-                        <Option>XXS</Option>
-                        <Option>XS</Option>
-                        <Option>S</Option>
-                        <Option>M</Option>
-                        <Option>L</Option>
-                        <Option>XL</Option>
-                        <Option>XXL</Option>
-                    </Select>
+                            <Text>Size </Text>
+                            <Select>
+                                <Option>XXS</Option>
+                                <Option>XS</Option>
+                                <Option>S</Option>
+                                <Option>M</Option>
+                                <Option>L</Option>
+                                <Option>XL</Option>
+                                <Option>XXL</Option>
+                            </Select>
                         </Filter>
                     </DIV>
                     <DIV>
@@ -48,7 +45,6 @@ export default function Single() {
                 </Info>
             </Wrapper>
         </Container>
-        <Footer/>
       </>
   )
 }

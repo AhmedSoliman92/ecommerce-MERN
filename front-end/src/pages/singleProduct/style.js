@@ -4,8 +4,11 @@ export const Container = styled.div`
 display:flex;
 margin: 50px 50px 50px 75px;
 padding:0 50px;
+justify-content: center;
+
 `
 export const Wrapper = styled.div`
+max-width:100vw;
 display:flex;
 flex-direction: row;
 flex-wrap: wrap;
@@ -16,14 +19,15 @@ padding:0 50px;
 `
 export const Image = styled.img`
 flex: 1;
-
-height:90vh;
+max-width:50vw;
+max-height:90vh;
 object-fit:cover;
 margin-right:40px;
 margin-bottom:15px;
 `
 export const Info = styled.div`
 flex: 1.5;
+max-width:60vw;
 display:flex;
 flex-direction: column;
 `
@@ -43,15 +47,17 @@ margin-bottom:40px;
 `
 export const DIV = styled.div`
 display:flex;
+flex-wrap:wrap;
 margin-bottom:50px;
-
 
 
 `
 export const Filter = styled.div`
 display:flex;
 align-items:center;
+justify-content:center;
 margin-right:80px;
+margin-bottom:15px;
 *{
     cursor: pointer;
 }
@@ -90,6 +96,7 @@ border: 1px solid #444;
 border-radius:10px;
 text-align:center;
 font-weight:600;
+
 
 `
 export const Btn = styled.button`

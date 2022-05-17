@@ -1,11 +1,10 @@
-import Bar from "../../components/bar/Bar";
-import Footer from "../../components/footer/Footer";
+
 import Product from "../../components/products/Product";
 import {H1,FilterContainer, Filter, Select,Option, Span} from './style'
 const Category = () => {
     return (
         <>
-            <Bar/>
+            
             <H1>Dresses</H1>
             <FilterContainer>
                 <Filter>
@@ -46,7 +45,6 @@ const Category = () => {
                 </Filter>
             </FilterContainer>
             <Product/>
-            <Footer/>
         </>
     );
 }
