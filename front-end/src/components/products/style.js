@@ -15,7 +15,7 @@ flex-wrap:wrap;
 justify-content:center;
 align-items:center;
 margin-left:15px;
-flex:1
+flex:1;
 `
 
 export const Hover = styled.div`
@@ -47,10 +47,7 @@ margin:20px 11px;
             background-color:rgba(255,255,255, 1);
             color:rgba(0,0,0,1);
         }
-        
-
     }
-
 `
 
 export const Image = styled.img`

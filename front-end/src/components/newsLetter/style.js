@@ -6,7 +6,7 @@ display:flex;
 flex-direction: column;
 flex-wrap: wrap;
 margin-top: 50px;
-margin-bottom:20px;
+
 align-items:center;
 background-color:rgba(236, 236, 236,1);
 `
