@@ -7,6 +7,7 @@ background-color:rgba(50, 50, 50,1);
 color:#fff;
 padding:30px 20px 50px 20px;
 font-family: 'Lato', sans-serif;
+flex-wrap:wrap;
 `
 
 
@@ -29,7 +30,6 @@ align-items:center;
 justify-content:center;
 letter-spacing:1px;
 text-align:justify;
-
 `
 export const Links = styled.div`
 flex:1;

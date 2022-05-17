@@ -9,7 +9,7 @@ export default function Footer() {
             </Title>
             <Info>
 
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore odit, reiciendis unde minus similique exercitationem dolor odio blanditiis ipsa corporis quod porro animi sequi, ea in nobis totam. Alias, dolorem?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima temporibus sequi, neque quibusdam asperiores beatae ducimus dicta facilis ex unde error dolores architecto odio iure hic corrupti nam dolore ipsum amet laboriosam accusantium exercitationem. Quod illum totam eos quia dicta id expedita cum iusto ab quam deserunt fuga soluta amet saepe iure, quaerat odit odio vel libero enim voluptatibus tenetur, accusantium eum. Quae, quisquam repudiandae nisi earum delectus dolorem libero reiciendis dolores dignissimos facere laboriosam ducimus inventore ullam autem labore amet fuga architecto natus optio ut possimus molestiae! Nisi amet pariatur delectus perspiciatis aliquam rem quas totam quod, alias nesciunt?
             </Info>
         </Ecommerce>
         <Center>

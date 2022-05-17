@@ -10,7 +10,7 @@ const News = () => {
                 Get timely updates from your favorite products
             </Span>
             <Email>
-                <Input/>
+                <Input type="email"/>
                 <Btn>
                     <PlayArrow/>
                 </Btn>

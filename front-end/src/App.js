@@ -1,8 +1,10 @@
+import Category from "./pages/category/Category";
 
-import Home from "./pages/home/Home";
+//import Home from "./pages/home/Home";
 function App() {
   return (
-    <Home/>
+    //<Home/>
+    <Category/>
   );
 }
 
