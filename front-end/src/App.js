@@ -2,7 +2,8 @@
 
 import Bar from "./components/bar/Bar";
 import Footer from "./components/footer/Footer";
-import Login from "./pages/auth/Login";
+//import Login from "./pages/auth/Login";
+import Checkout from "./pages/checkout/Checkout";
 //import Register from "./pages/auth/Register";
 //import Single from "./pages/singleProduct/Single";
 
@@ -13,8 +14,9 @@ function App() {
       <Bar/>
       {/* <Home/>
       <Category/>
-      <Single/> */}
-      <Login/>
+      <Single/>
+      <Login/> */}
+      <Checkout/>
       <Footer/>
     </>
   );

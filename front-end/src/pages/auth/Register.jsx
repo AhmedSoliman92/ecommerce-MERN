@@ -7,9 +7,9 @@ const Register = () => {
                 <Auth>
                     <TItle>Register</TItle>
                     <Input placeholder='Username'></Input>
-                    <Input placeholder='Email'></Input>
-                    <Input placeholder='Password'></Input>
-                    <Input placeholder='Confirm Password'></Input>
+                    <Input type="email" placeholder='Email'></Input>
+                    <Input type="password" placeholder='Password'></Input>
+                    <Input type="password" placeholder='Confirm Password'></Input>
                     <Btn>Register</Btn>
                     <Span>Have an account? <b>Login</b></Span>
                 </Auth>

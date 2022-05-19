@@ -7,7 +7,7 @@ export default function Login() {
                 <Auth>
                     <TItle>Login</TItle>
                     <Input placeholder='Username'></Input>
-                    <Input placeholder='Password'></Input>
+                    <Input type="password" placeholder='Password'></Input>
                     <Btn>Login</Btn>
                     <Span>Don't have an account? <b>Register</b></Span>
                 </Auth>
