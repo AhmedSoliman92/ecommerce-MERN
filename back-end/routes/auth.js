@@ -3,7 +3,8 @@ const route = express.Router();
 const cryptoJS = require('crypto-js');
 const User = require('../models/User')
 const jwt = require('jsonwebtoken')
-
+const {verfiyTokenAndAuth} = require('../config/verfiyToken')
+//Register a new User 
 route.post('/register',async(req, res)=>{
     try{
         req.body.password = cryptoJS.AES.encrypt(req.body.password,process.env.SECRET_KEY);
@@ -17,7 +18,7 @@ route.post('/register',async(req, res)=>{
     }
 })
 
-
+// User login
 route.post('/login',async(req, res)=>{
     try{
         const username= req.body.username;
@@ -49,5 +50,32 @@ route.post('/login',async(req, res)=>{
     
 })
 
+//Update User
 
+route.put('/:id',verfiyTokenAndAuth, async(req,res)=>{
+    if (req.body.password){
+        req.body.password = CryptoJS.AES.encrypt(req.body.password, process.env.SECRET_KEY);
+    }
+    try {
+        const updatedUser = await User.findByIdAndUpdate(req.params.id, {
+            $set: req.body
+        },{
+            new:true
+        })
+        res.status(200).json(updatedUser);
+    } catch (err) {
+        res.sendStatus(400);
+    }
+    
+})
+
+//delete user
+route.delete('/:id', verfiyTokenAndAuth,async(req,res)=>{
+    try {
+        const user =await User.findByIdAndDelete({_id: req.params.id});
+        res.status(204).json(user);
+    } catch (err) {
+        res.sendStatus(400);
+    }
+})
 module.exports = route;
