@@ -3,7 +3,6 @@ const route = express.Router();
 const cryptoJS = require('crypto-js');
 const User = require('../models/User')
 const jwt = require('jsonwebtoken')
-const {verfiyTokenAndAuth} = require('../config/verfiyToken')
 //Register a new User 
 route.post('/register',async(req, res)=>{
     try{

@@ -1,6 +1,5 @@
 const express = require('express');
 const route = express.Router();
-const cryptoJS = require('crypto-js');
 const User = require('../models/User');
 const { verfiyTokenAndAuth, verfiyTokenAndAdmin } = require('../config/verfiyToken');
 
