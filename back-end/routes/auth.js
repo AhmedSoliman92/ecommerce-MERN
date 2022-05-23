@@ -50,32 +50,4 @@ route.post('/login',async(req, res)=>{
     
 })
 
-//Update User
-
-route.put('/:id',verfiyTokenAndAuth, async(req,res)=>{
-    if (req.body.password){
-        req.body.password = CryptoJS.AES.encrypt(req.body.password, process.env.SECRET_KEY);
-    }
-    try {
-        const updatedUser = await User.findByIdAndUpdate(req.params.id, {
-            $set: req.body
-        },{
-            new:true
-        })
-        res.status(200).json(updatedUser);
-    } catch (err) {
-        res.sendStatus(400);
-    }
-    
-})
-
-//delete user
-route.delete('/:id', verfiyTokenAndAuth,async(req,res)=>{
-    try {
-        const user =await User.findByIdAndDelete({_id: req.params.id});
-        res.status(204).json(user);
-    } catch (err) {
-        res.sendStatus(400);
-    }
-})
 module.exports = route;

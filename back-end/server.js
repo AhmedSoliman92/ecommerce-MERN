@@ -16,8 +16,8 @@ app.use(express.json());
 
 
 //Routes
-app.use('/users',usersRoute)
-app.use('/auth',authRoute)
+app.use('/users',usersRoute);
+app.use('/auth',authRoute);
 
 
 mongoose.connection.once('open',()=>{
