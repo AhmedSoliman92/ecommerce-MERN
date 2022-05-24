@@ -1,24 +1,30 @@
-//import Category from "./pages/category/Category";
-
-import Bar from "./components/bar/Bar";
-import Footer from "./components/footer/Footer";
-//import Login from "./pages/auth/Login";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./pages/auth/Login";
 import Checkout from "./pages/checkout/Checkout";
-//import Register from "./pages/auth/Register";
-//import Single from "./pages/singleProduct/Single";
+import Register from "./pages/auth/Register";
+import Single from "./pages/singleProduct/Single";
+import Category from "./pages/category/Category";
 
-//import Home from "./pages/home/Home";
+import Home from "./pages/home/Home";
 function App() {
   return (
-    <>
-      <Bar/>
-      {/* <Home/>
-      <Category/>
-      <Single/>
-      <Login/> */}
-      <Checkout/>
-      <Footer/>
-    </>
+      
+        <>
+
+
+      <Router>
+        <Routes>
+        <Route exact path='/' element={<Home/>}/>
+        <Route path='/cat' element={<Category/>}/>
+        <Route path='/:id' element={<Single/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/register' element={<Register/>}/>
+        <Route path='/checkout' element={<Checkout/>}/>
+        </Routes>
+
+      </Router>
+
+        </>
   );
 }
 

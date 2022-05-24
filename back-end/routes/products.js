@@ -7,12 +7,10 @@ const route = express.Router();
 
 route.post('/create', verfiyTokenAndAdmin,async (req,res)=>{
     try{
-        console.log(req.body)
         const product = new Product(req.body);
         const savedProduct = await product.save();
         res.status(201).json(savedProduct);
     }catch(err){
-        console.log(err)
         res.sendStatus(400)
     }
 });

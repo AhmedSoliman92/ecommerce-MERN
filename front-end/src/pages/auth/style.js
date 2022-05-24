@@ -14,7 +14,7 @@ justify-content:center;
 align-items:center;
 
 `
-export const Auth = styled.div`
+export const Auth = styled.form`
 display:flex;
 flex-direction:column;
 align-items:center;
