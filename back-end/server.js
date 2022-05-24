@@ -7,6 +7,7 @@ const authRoute= require('./routes/auth');
 const productRoute= require('./routes/products');
 const cartRoute = require('./routes/cart');
 const orderRoute= require('./routes/order');
+const stripeRoute = require('./routes/stripe')
 const app = express()
 dotenv.config();
 
@@ -24,7 +25,7 @@ app.use('/auth',authRoute);
 app.use('/products',productRoute);
 app.use('/cart',cartRoute);
 app.use('/orders',orderRoute);
-
+app.use('/payment',stripeRoute);
 mongoose.connection.once('open',()=>{
     console.log("Connected to your DB")
     app.listen(PORT, ()=>{
