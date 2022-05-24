@@ -6,15 +6,15 @@ import Single from "./pages/singleProduct/Single";
 import Category from "./pages/category/Category";
 
 import Home from "./pages/home/Home";
+import { useSelector } from "react-redux";
 function App() {
+  const {isFetching,currentUser, error} = useSelector(state=>state.user)
   return (
       
         <>
-
-
       <Router>
         <Routes>
-        <Route exact path='/' element={<Home/>}/>
+        <Route exact path='/' element={currentUser?<Home/>:<Login/>}/>
         <Route path='/cat' element={<Category/>}/>
         <Route path='/:id' element={<Single/>}/>
         <Route path='/login' element={<Login/>}/>

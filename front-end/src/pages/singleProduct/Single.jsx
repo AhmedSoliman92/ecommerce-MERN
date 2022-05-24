@@ -1,9 +1,11 @@
 
 import {Container, Wrapper,Image, Info, Title, Desc, Price,DIV, Filter, Color,Text, Option, Select, Input, Btn} from './style'
 import {Remove, Add} from '@mui/icons-material';
+import Bar from '../../components/bar/Bar';
 export default function Single() {
   return (
       <>
+        <Bar/>
         <Container>
             <Wrapper>
                 <Image src='/assets/images/33.jpg'/>

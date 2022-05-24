@@ -19,7 +19,7 @@ display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
-font-family: 'Lato', sans-serif;
+font-family: 'Lato', 'sans-serif';
 
 padding: 40px 80px;
 border-radius:10px;

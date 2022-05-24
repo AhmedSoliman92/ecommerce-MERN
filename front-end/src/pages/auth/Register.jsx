@@ -6,6 +6,8 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 const Register = () => {
     const username= useRef();
+    const firstName= useRef();
+    const lastName= useRef();
     const email= useRef();
     const password= useRef();
     const confirmPassword= useRef();
@@ -17,6 +19,8 @@ const Register = () => {
         }else{
             const newUser={
                 username:username.current.value,
+                firstName:firstName.current.value,
+                lastName:lastName.current.value,
                 email: email.current.value,
                 password:password.current.value,
             }
@@ -37,6 +41,8 @@ const Register = () => {
                 <Auth onSubmit={handleRegister}>
                     <TItle>Register</TItle>
                     <Input placeholder='Username' ref={username} required></Input>
+                    <Input placeholder='FirstName' ref={firstName} required></Input>
+                    <Input placeholder='LastName' ref={lastName} required></Input>
                     <Input type="email" placeholder='Email' ref={email} required></Input>
                     <Input type="password" placeholder='Password' ref={password} required></Input>
                     <Input type="password" placeholder='Confirm Password' ref={confirmPassword} required></Input>

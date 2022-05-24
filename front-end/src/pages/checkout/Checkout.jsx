@@ -1,8 +1,11 @@
 import {Container,Wrapper,Title,Btns,Products, Cart, Left,Center, SumInfo,Summary, Btn, NumItems, Span, CenterLeft, CenterRight, Color, Count, Price, Cost,SummaryCols} from './style'
 import {Remove, Add} from '@mui/icons-material';
+import Bar from '../../components/bar/Bar';
 export default function Checkout() {
   return (
-    <Container>
+    <>
+        <Bar/>
+        <Container>
         <Wrapper>
                 <Title>Shopping Cart</Title>
                 <Btns>
@@ -91,10 +94,9 @@ export default function Checkout() {
                         </SummaryCols>
                     </Summary>
                 </Cart>
-                
-
         </Wrapper>
     </Container>
+    </>
   )
 }
 
