@@ -5,7 +5,7 @@ const Cart = require('../models/Cart');
 
 
 //create cart
-route.post('/create', verifyToken,(req, res)=>{
+route.post('/create', verifyToken,async(req, res)=>{
     try{
         const cart = new Cart(req.body);
         const savedCart = await cart.save();
@@ -61,3 +61,6 @@ route.delete('/:id', verfiyTokenAndAuth,async(req,res)=>{
         res.sendStatus(400);
     }
 })
+
+
+module.exports = route;
