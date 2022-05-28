@@ -1,3 +1,4 @@
+
 import { Container,Categories, CategoryCont, Image, CatTitle, ShopBtn } from './style'
 
 export default function Category() {

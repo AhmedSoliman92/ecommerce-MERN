@@ -2,7 +2,7 @@
 import Bar from "../../components/bar/Bar";
 import Product from "../../components/products/Product";
 import {H1,FilterContainer, Filter, Select,Option, Span} from './style'
-const Category = () => {
+const Products = () => {
     return (
         <>
             <Bar/>
@@ -50,4 +50,4 @@ const Category = () => {
     );
 }
 
-export default Category;
+export default Products;

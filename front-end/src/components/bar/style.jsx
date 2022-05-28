@@ -43,8 +43,8 @@ font-size:18px;
 }
 
 
-//center
 `
+//center
 export const Center = styled.div`
 flex:1;
 display:flex;
@@ -69,5 +69,7 @@ margin-bottom:20px;
 
 export const Span=styled.span`
 margin-right: 20px;
+font-family: 'Lato';
+cursor:pointer;
 
 `

@@ -48,7 +48,7 @@ const Register = () => {
                     <Input type="password" placeholder='Confirm Password' ref={confirmPassword} required></Input>
                     <Btn type='submit'>Register</Btn>
                     <Span>Have an account?
-                        <Link style={{'text-decoration': 'none'}} to= '/login'>
+                        <Link style={{textDecoration: 'none'}} to= '/login'>
                         <b> Login</b>
                         </Link>
                     </Span>

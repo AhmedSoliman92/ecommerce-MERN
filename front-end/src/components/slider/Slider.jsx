@@ -5,17 +5,13 @@ import { useState } from 'react';
 export default function Slider() {
   const [slide, setSlide]= useState(1)
   const handleArrow = (dir)=>{
-    console.log(slide)
     if(dir==='right'){
       setSlide(slide < 6 ? slide + 1:0);
       
-      
-      console.log(slide)
     }
     if(dir==='left'){
       setSlide(slide>0?slide-1:6);
-       console.log('left')
-      console.log(slide)
+
     }
   }
   return (

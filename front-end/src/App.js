@@ -3,23 +3,25 @@ import Login from "./pages/auth/Login";
 import Checkout from "./pages/checkout/Checkout";
 import Register from "./pages/auth/Register";
 import Single from "./pages/singleProduct/Single";
-import Category from "./pages/category/Category";
-
+import Categories from "./pages/categories/Categories";
+import Products from './pages/products/Products'
 import Home from "./pages/home/Home";
 import { useSelector } from "react-redux";
 function App() {
-  const {isFetching,currentUser, error} = useSelector(state=>state.user)
+  const {currentUser} = useSelector(state=>state.user)
   return (
       
         <>
       <Router>
         <Routes>
-        <Route exact path='/' element={currentUser?<Home/>:<Login/>}/>
-        <Route path='/cat' element={<Category/>}/>
-        <Route path='/:id' element={<Single/>}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/register' element={<Register/>}/>
+        <Route exact path='/' element={<Home/>}/>
+        <Route path='/cat' element={<Categories/>}/>
+        <Route path='/login' element={currentUser?<Home/>:<Login/>}/>
+        <Route path='/register' element={currentUser?<Home/>:<Register/>}/>
         <Route path='/checkout' element={<Checkout/>}/>
+        <Route path='/products' element={<Products/>}/>
+        <Route path='/:id' element={<Single/>}/>
+        
         </Routes>
 
       </Router>
