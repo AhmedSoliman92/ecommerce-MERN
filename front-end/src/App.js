@@ -7,6 +7,7 @@ import Categories from "./pages/categories/Categories";
 import Products from './pages/products/Products'
 import Home from "./pages/home/Home";
 import { useSelector } from "react-redux";
+import Create from "./pages/createCategory/Create";
 function App() {
   const {currentUser} = useSelector(state=>state.user)
   return (
@@ -15,7 +16,8 @@ function App() {
       <Router>
         <Routes>
         <Route exact path='/' element={<Home/>}/>
-        <Route path='/cat' element={<Categories/>}/>
+        <Route exact path='/cat' element={<Categories/>}/>
+        <Route path='/cat/:id' element={<Create/>}/>
         <Route path='/login' element={currentUser?<Home/>:<Login/>}/>
         <Route path='/register' element={currentUser?<Home/>:<Register/>}/>
         <Route path='/checkout' element={<Checkout/>}/>

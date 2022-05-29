@@ -32,7 +32,7 @@ export default function Bar() {
         <Right>
 
         {
-            currentUser.isAdmin
+            currentUser?.isAdmin
             ?
             <>
             <Link style={{textDecoration:'none', color:'inherit'}} to='/cat'>

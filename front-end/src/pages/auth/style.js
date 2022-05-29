@@ -55,7 +55,7 @@ border-bottom: 2px solid #999;
 font-size: 20px;
 padding:10px 20px;
 margin-bottom: 15px;
-font-family: 'Lato', sans-serif;
+font-family: 'Lato', 'sans-serif';
 font-size: 20px;
 
 &:focus{

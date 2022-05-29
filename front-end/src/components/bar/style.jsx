@@ -10,7 +10,6 @@ font-family: 'Lato', sans-serif;
 padding:10px 20px;
 
 
-
 `
 //left bart
 export const Left = styled.div`

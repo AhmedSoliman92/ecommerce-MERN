@@ -37,7 +37,7 @@ route.post('/login',async(req, res)=>{
                 admin:user.isAdmin
             },
             process.env.SECRET_JWT,
-            {expiresIn: '15m'}
+            {expiresIn: '90m'}
         )
 
         res.status(201).json({...other,accessToken});

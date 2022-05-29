@@ -1,64 +1,57 @@
 
+import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { normalRequest } from '../../apiCalls'
 import { Container,Categories, CategoryCont, Image, CatTitle, ShopBtn } from './style'
 
 export default function Category() {
+    const {currentUser}= useSelector(state=>state.user)
+    const [categories, setCategories]= useState();
+    const location=useLocation()
+    const navigate = useNavigate()
+
+
+    const handleDelete = async(id)=>{
+        await normalRequest.delete(`cat/${id}`)
+        setCategories(categories.filter(category=>category._id !== id))
+        navigate(location.pathname)
+    }
+
+    useEffect(()=>{
+        const getCategory = async()=>{
+            const res = await normalRequest.get('cat');
+            setCategories(res.data);
+            
+        };
+        getCategory();
+    },[])
   return (
     <Container>
         <Categories>
-            <CategoryCont>
+            {categories && categories.map(category=>(
 
-                <Image src="/assets/images/13.jpg" alt=""/>
-                <CatTitle>
-                    coats
-                </CatTitle>
-                <ShopBtn>shop now
-                </ShopBtn>
-            </CategoryCont>
-            <CategoryCont>
+            <CategoryCont key={category._id}>
 
-                <Image src="/assets/images/14.jpg" alt=""/>
+                <Image src={`http://localhost:3500/${category.img}`} alt=""/>
                 <CatTitle>
-                    men
+                    {category.category}
                 </CatTitle>
-                <ShopBtn>shop now
+                <Link to='/'>
+                <ShopBtn>{currentUser.isAdmin? 'display as client': 'shop now'}
                 </ShopBtn>
-            </CategoryCont>
-            <CategoryCont>
-
-                <Image src="/assets/images/15.jpg" alt=""/>
-                <CatTitle>
-                    Spring
-                </CatTitle>
-                <ShopBtn>shop now
+                </Link>
+                <Link  to={`/cat/${category._id}`}>
+                <ShopBtn check='edit'>{currentUser.isAdmin? 'edit': ''}
                 </ShopBtn>
-            </CategoryCont>
-            <CategoryCont>
-
-                <Image src="/assets/images/16.jpg" alt=""/>
-                <CatTitle>
-                Jewellery
-                </CatTitle>
-                <ShopBtn>shop now
+                </Link>
+                <Link to='/'>
+                <ShopBtn onClick={()=>handleDelete(category._id)} check='delete'>{currentUser.isAdmin? 'delete': ''}
                 </ShopBtn>
+                </Link>
             </CategoryCont>
-            <CategoryCont>
-
-                <Image src="/assets/images/17.jpg" alt=""/>
-                <CatTitle>
-                    Winter
-                </CatTitle>
-                <ShopBtn>shop now
-                </ShopBtn>
-            </CategoryCont>
-            <CategoryCont>
-
-                <Image src="/assets/images/18.jpg" alt=""/>
-                <CatTitle>
-                    Glasses
-                </CatTitle>
-                <ShopBtn>shop now
-                </ShopBtn>
-            </CategoryCont>
+            ))}
+            
         </Categories>
     </Container>
   )

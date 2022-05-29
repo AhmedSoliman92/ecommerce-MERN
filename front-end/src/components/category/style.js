@@ -56,10 +56,11 @@ export const ShopBtn = styled.button`
 border: none;
 position: absolute;
 text-transform:uppercase;
-font-family: 'Lato', sans-serif;
+font-family: 'Lato', 'sans-serif';
 font-weight:600;
 right:0;
 left:0;
+top:${props=> props.check==='edit'?'340px':props.check==='delete'?'390px':'290px'};
 margin:auto;
 padding: 10px 15px;
 margin-top:80px;
