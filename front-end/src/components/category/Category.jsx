@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { normalRequest } from '../../apiCalls'
+import { normalRequest, userRequest } from '../../apiCalls'
 import { Container,Categories, CategoryCont, Image, CatTitle, ShopBtn } from './style'
 
 export default function Category() {
@@ -13,7 +13,7 @@ export default function Category() {
 
 
     const handleDelete = async(id)=>{
-        await normalRequest.delete(`cat/${id}`)
+        await userRequest.delete(`cat/${id}`)
         setCategories(categories.filter(category=>category._id !== id))
         navigate(location.pathname)
     }
@@ -38,17 +38,24 @@ export default function Category() {
                     {category.category}
                 </CatTitle>
                 <Link to='/'>
-                <ShopBtn>{currentUser.isAdmin? 'display as client': 'shop now'}
+                <ShopBtn>{currentUser?.isAdmin? 'display as client': 'shop now'}
                 </ShopBtn>
                 </Link>
-                <Link  to={`/cat/${category._id}`}>
-                <ShopBtn check='edit'>{currentUser.isAdmin? 'edit': ''}
-                </ShopBtn>
-                </Link>
-                <Link to='/'>
-                <ShopBtn onClick={()=>handleDelete(category._id)} check='delete'>{currentUser.isAdmin? 'delete': ''}
-                </ShopBtn>
-                </Link>
+                {currentUser?.isAdmin?
+                (
+                    <>
+                    <Link  to={`/cat/${category._id}`}>
+                        <ShopBtn check='edit'> edit
+                        </ShopBtn>
+                    </Link>
+                    <Link to='/'>
+                        <ShopBtn onClick={()=>handleDelete(category._id)} check='delete'>delete
+                        </ShopBtn>
+                    </Link>
+                    </>
+                ):''
+                }
+                
             </CategoryCont>
             ))}
             

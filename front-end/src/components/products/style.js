@@ -7,6 +7,7 @@ flex-direction: row;
 flex-wrap: wrap;
 margin: 0 50px;
 padding:0 50px;
+justify-content:center;
 `
 
 export const ProCont = styled.div`

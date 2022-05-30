@@ -9,6 +9,7 @@ const cartRoute = require('./routes/cart');
 const orderRoute= require('./routes/order');
 const stripeRoute = require('./routes/stripe');
 const categoryRoute = require('./routes/category');
+const tokenRoute= require('./routes/refreshToken')
 const cors = require('cors')
 const multer = require('multer');
 const path = require('path')
@@ -32,7 +33,7 @@ app.use('/orders',orderRoute);
 app.use('/orders',orderRoute);
 app.use('/cat',categoryRoute);
 app.use('/payment',stripeRoute);
-
+app.use('/refresh',tokenRoute)
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {

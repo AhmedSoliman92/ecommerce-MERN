@@ -1,17 +1,17 @@
 import React, { useRef, useState } from 'react'
 import Bar from '../../components/bar/Bar'
-import {normalRequest} from '../../apiCalls'
+import {normalRequest, userRequest} from '../../apiCalls'
 import { Container,Img,Input,Submit,Title,Wrapper, Add, Error } from './style'
+import { useParams } from 'react-router-dom';
 
 export default function Create() {
   const [file, setFile]=useState([]);
   const [warning,setWarning]=useState(false);
   const [error, setError]=useState('')
   const title = useRef();
-
+  const {id}= useParams()
   const createCategory = async()=>{
     setWarning(false);
-    
     if(file.length>0){
 
       const form = new FormData();
@@ -24,9 +24,10 @@ export default function Create() {
       }
       try {
         await normalRequest.post('/upload',form);
-        await normalRequest.post('/cat/create', newCat)
+        await userRequest.post('/cat/create', newCat)
+        window.location.reload();
+
       } catch (err) {
-        console.log(err.response)
         setError(err.response.data.message)
         setWarning(true)
       }
@@ -50,10 +51,10 @@ export default function Create() {
                   <Add />
                   </label>
 
-                <Title placeholder='Category Name' ref={title}/>
+                <Title placeholder='Category Name' defaultValue={id!=='create'?`${id}`:''} ref={title}/>
             </Input>
             <Submit onClick={createCategory}> Create Category</Submit>
-            <Title id="file" type="file" style={{display:'none'}} onChange={(e)=>setFile(e.target.files)} accepted='.jpg, .jpeg, .png'/>
+            <Title id="file" type="file"  style={{display:'none'}} onChange={(e)=>setFile(e.target.files)} accepted='.jpg, .jpeg, .png'/>
         </Wrapper>
 
     </Container>

@@ -6,11 +6,13 @@ import { Badge } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { LOGOUT } from '../../redux/userReducer';
+import { normalRequest} from '../../apiCalls';
 
 export default function Bar() {
   const {currentUser} = useSelector(state=> state.user)
   const dispatch = useDispatch()
-  const handlelogout = ()=>{
+  const handlelogout = async()=>{
+    await normalRequest.post('/auth/logout',{refreshToken:currentUser.refreshToken,id:currentUser._id})
     dispatch(LOGOUT())
   }
   return (

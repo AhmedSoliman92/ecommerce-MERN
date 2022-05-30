@@ -5,7 +5,7 @@ const Category = require('../models/Category');
 
 
 //create category
-route.post('/create',async(req, res)=>{
+route.post('/create',verfiyTokenAndAdmin, async(req, res)=>{
     try{
         const category = new Category(req.body);
         const savedCategory = await category.save();
@@ -44,7 +44,7 @@ route.get('/', async(req, res)=>{
 
 
 //delete Category
-route.delete('/:id',async(req,res)=>{
+route.delete('/:id',verfiyTokenAndAdmin, async(req,res)=>{
     try {
         const category =await Category.findByIdAndDelete({_id: req.params.id});
         res.status(204).json(category);

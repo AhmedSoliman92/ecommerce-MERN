@@ -25,10 +25,15 @@ const userSlice = createSlice({
                 state.currentUser=null;
                 state.isFetching=false;
                 state.error= false;
+        },
+        UPDATE_TOKEN:(state,action)=>{
+            console.log(action)
+            state.currentUser= action.payload;
+            state.isFetching= false;
         }
     }
 });
 
-export const {START_LOGIN, SUCCESS_LOGIN, FAILUIRE_LOGIN, LOGOUT} = userSlice.actions;
+export const {START_LOGIN, SUCCESS_LOGIN, FAILUIRE_LOGIN, LOGOUT,UPDATE_TOKEN} = userSlice.actions;
 export default userSlice.reducer;
 

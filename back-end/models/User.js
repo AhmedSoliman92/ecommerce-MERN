@@ -33,6 +33,10 @@ const userSchema= new Schema({
     isAdmin:{
         type: Boolean,
         default:false
+    },
+    refreshToken:{
+        type:Array,
+        default:[]
     }
     
 },{timestamps:true})

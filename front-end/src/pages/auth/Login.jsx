@@ -17,6 +17,7 @@ export default function Login() {
     dispatch(START_LOGIN());
     try {
       const res = await normalRequest.post('auth/login',{username,password});
+      console.log(res.data)
       dispatch(SUCCESS_LOGIN(res.data));
       navigate('/')
   } catch (err) {

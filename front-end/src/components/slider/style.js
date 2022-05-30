@@ -88,4 +88,5 @@ font-weight:600;
 padding: 10px 20px;
 cursor: pointer;
 border: 2px solid black;
+color:black;
 `

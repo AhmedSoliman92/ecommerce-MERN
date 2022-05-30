@@ -2,8 +2,8 @@ import {Container,Wrapper, Auth, Input, TItle, Btn, Span} from './style'
 import Bar from '../../components/bar/Bar'
 import Footer from "../../components/footer/Footer";
 import { useRef } from 'react';
-import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import { normalRequest } from '../../apiCalls';
 const Register = () => {
     const username= useRef();
     const firstName= useRef();
@@ -25,7 +25,7 @@ const Register = () => {
                 password:password.current.value,
             }
             try {
-                await axios.post('auth/register', newUser);
+                await normalRequest.post('auth/register', newUser);
                 navigate('/login');
             } catch (err) {
                 console.log(err);
